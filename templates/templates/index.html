@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate My Dahej</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>CalculateMyDahej.com</h1>
+    <p class="tagline">Dowry Awareness Calculator</p>
+
+    <a href="/dowry-law">Know Dowry Law</a>
+
+    {% if not show_result %}
+    <form method="POST">
+        <label>Monthly Earnings (₹)</label>
+        <input type="number" required>
+
+        <label>Total Savings (₹)</label>
+        <input type="number" required>
+
+        <label>Property Value (₹)</label>
+        <input type="number" required>
+
+        <label>Job Role</label>
+        <input type="text" required>
+
+        <button type="submit">Calculate Dahej</button>
+    </form>
+    {% endif %}
+
+    {% if show_result %}
+        <h2>Calculated Dahej</h2>
+        <h1>₹ 0</h1>
+        <p class="warning">
+            Dowry is illegal in India.<br>
+            Giving or taking dowry can lead to JAIL.
+        </p>
+        <a href="/">Calculate Again</a>
+    {% endif %}
+</div>
+
+</body>
+</html>
